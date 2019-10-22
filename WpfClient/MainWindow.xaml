@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="437.797" Width="792.373">
+    <Grid>
+        <DataGrid x:Name ="dgProducts" 
+                  HorizontalAlignment="Left" Height="274" Margin="36,116,0,0" 
+                  VerticalAlignment="Top" Width="722" ColumnWidth="*" 
+                  IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Ціна" Binding="{Binding Price}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name ="btnGetData" Content="Get Data" HorizontalAlignment="Left" Margin="36,62,0,0" VerticalAlignment="Top" Width="146" Height="36" Click="BtnGetData_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="329,40,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="429"/>
+    </Grid>
+</Window>
