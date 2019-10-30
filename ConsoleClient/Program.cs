@@ -17,7 +17,7 @@ namespace ConsoleClient
             Console.OutputEncoding = Encoding.Unicode;
             Console.WriteLine(DateTime.Now);
             Console.WriteLine("Дані із сервера");
-            ProductApiService sp = new ProductApiService(); 
+            IProductApiService sp = new IProductApiService(); 
             foreach (var item in sp.GetProducts())
             {
                 Console.WriteLine("Id: {0}\tName: {1}\tPrice:{2}", 

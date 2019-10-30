@@ -34,7 +34,7 @@ namespace WpfClient
         {
             Thread thread = new Thread(() =>
             {
-                ProductApiService service = new ProductApiService();
+                IProductApiService service = new IProductApiService();
                 var list = service.GetProducts();
                 foreach (var p in list)
                 {

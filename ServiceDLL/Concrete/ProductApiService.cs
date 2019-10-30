@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ServiceDLL.Concrete
 {
-    public class ProductApiService : IProductService
+    public class IProductApiService : IProductService
     {
         private string _url = "https://localhost:44356/api/products";
         public int Create(ProductAddModel product)
@@ -39,6 +39,20 @@ namespace ServiceDLL.Concrete
             //Debug.WriteLine(content.ToString());
 
             return 0;
+        }
+
+        public ProductEditModel EditGetById(int id)
+        {
+            var client = new WebClient();
+            client.Encoding = ASCIIEncoding.UTF8;
+            string data = client.DownloadString($"{_url}/{id}");
+            var p = JsonConvert.DeserializeObject<ProductEditModel>(data);
+            return p;
+        }
+
+        public ProductModel EditSave(ProductEditModel model)
+        {
+            throw new NotImplementedException();
         }
 
         public List<ProductModel> GetProducts()

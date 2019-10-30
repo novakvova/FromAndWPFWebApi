@@ -35,6 +35,7 @@
             this.lblTredInfo = new System.Windows.Forms.Label();
             this.btnAddProductForm = new System.Windows.Forms.Button();
             this.btnShowLoginForm = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,12 +105,23 @@
             this.btnShowLoginForm.UseVisualStyleBackColor = true;
             this.btnShowLoginForm.Click += new System.EventHandler(this.btnShowLoginForm_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(923, 420);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(193, 40);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Редагувати продукт";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 446);
+            this.ClientSize = new System.Drawing.Size(1128, 472);
             this.Controls.Add(this.btnShowLoginForm);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddProductForm);
             this.Controls.Add(this.lblTredInfo);
             this.Controls.Add(this.dgvProducts);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.Label lblTredInfo;
         private System.Windows.Forms.Button btnAddProductForm;
         private System.Windows.Forms.Button btnShowLoginForm;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 

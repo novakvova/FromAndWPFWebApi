@@ -12,5 +12,7 @@ namespace ServiceDLL.Interfaces
         List<ProductModel> GetProducts();
         Task<List<ProductModel>> GetProductsAsync();
         int Create(ProductAddModel product);
+        ProductEditModel EditGetById(int id);
+        ProductModel EditSave(ProductEditModel model);
     }
 }

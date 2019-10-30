@@ -40,7 +40,7 @@ namespace WFClient
             ///thread.Start();
             ///
             Debug.WriteLine("-----Main thread----- {0}", Thread.CurrentThread.ManagedThreadId);
-            ProductApiService service = new ProductApiService();
+            IProductApiService service = new IProductApiService();
             var list = await service.GetProductsAsync();
             Debug.WriteLine("-----Main thread----- {0}", Thread.CurrentThread.ManagedThreadId);
             foreach (var p in list)
@@ -61,6 +61,20 @@ namespace WFClient
         {
             LoginForm dlg = new LoginForm();
             dlg.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvProducts.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dgvProducts.SelectedRows[0];
+                int id = (int)row.Cells["ColId"].Value;
+                EditProductForm dlg = new EditProductForm();
+                dlg.IdProduct = id;
+                dlg.ShowDialog();
+            }
+            //dgvProducts.SelectedRows.
+            
         }
     }
 }

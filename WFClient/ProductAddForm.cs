@@ -27,7 +27,7 @@ namespace WFClient
         {
             try
             {
-                ProductApiService service = new ProductApiService();
+                IProductApiService service = new IProductApiService();
                 service.Create(new ServiceDLL.Models.ProductAddModel
                 {
                     Name = txtName.Text,
